@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+
+<!--================================================================================
+    
+================================================================================ -->
+
+
+<!-- Mirrored from demo.geekslabs.com/materialize/v1.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2015 13:54:57 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="">
+    <title></title>
+
+    <!-- Favicons-->
+   <!--  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32"> -->
+    <!-- Favicons-->
+   <!--  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png"> -->
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+
+
+    <!-- CORE CSS-->    
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="js/plugins/material-preloader/materialPreloader.html" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+   <!--  <link href="js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
+    <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    
+    
+       <!--<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>-->
+
+
+
+ <!--       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
+
+<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIeZwHuk5VmA6zDWns-1lEaXB2a-ApdGc&libraries=places&callback=init"
+         async defer></script>-->
+
+
+      <style type="text/css">
+        html, body { height: 100%; margin: 0; padding: 0; }
+        #map_canvas { height: 50%;margin-top: 5px; }
+    </style> 
+
+
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+    <script type="text/javascript" language="javascript">
+
+
+    
+<!-- A json call fetching prices from database -->
+   
+   $(document).ready(function() {
+
+      //$("#driver").click(function(event){
+          $.getJSON('getdata.php', function(jd) {
+          
+          $.each(jd, function(index, item){
+
+              $('#del1').val( '' + jd[index].yellow_taxi+'');
+               $('#del2').val( '' + jd[index].private_taxi+'');
+       
+          });
+
+      },function(){
+        alert("An error Ovcc");
+      });
+
+   });
+  
+   
+  
+   </script>
+
+
+</head>
+<body onload="initialize()">
+
+<!--  <div id="loader-wrapper">
+        <div id="loader">
+
+
+
+
+
+        </div>        
+      
+  
+    </div> -->
+
+
+
+    <header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="blue">
+                <div class="nav-wrapper">
+
+
+                    <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text"></span></h1>
+
+
+              <a class="right dropdown-button  waves-effect waves-light " style="margin-top:10px;" data-activates="dropdown2"><i class="mdi-navigation-more-vert"></i></a>
+                          <ul id="dropdown2" class="dropdown-content" style="margin-left:-10px;margin-top:15px">
+                            <li><a href="#!" class="-text" ></a>
+                            </li>
+                            <li><a href="#!" class="-text ">Info</a>
+                            </li>
+                            <li><a href="#!" class="-text">Share</a>
+                            </li>
+                          </ul>
+                
+                   
+                 
+
+
+
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+
+
+ <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+            <aside id="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed leftside-navigation">
+                  
+                    <li class="bold"><a href="index-2.html" class="waves-effect waves-cyan"><i class="mdi-action-account-box"></i> Profile </a>
+                    </li>
+                    <li class="bold"><a href="app-email.html" class="waves-effect waves-cyan"><i class="mdi-maps-directions-car"></i> Rides </a>
+                    </li>
+                    <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-action-assignment"></i> Rate Cards </a>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-social-share"></i> Refer to friends</a>
+                              
+                            </li>
+                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-image-palette"></i> Help </a>
+                                                          </li>
+                            
+                           
+                          
+
+
+                          
+
+                           
+                        </ul>
+                    </li>
+                 
+                </ul>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse  btn-medium waves-effect waves-light hide-on-large-only darken-2" style="color:#fff;"><i class="mdi-navigation-menu" ></i></a>
+            </aside></div></div>
+
+<div class="container">
+            <section id="content">
+
+
+
+            <div id="card-widgets">
+                        <div class="row">
+
+                          
+
+
+                
+  <div class="col s12 m8 l9">
+                      <div class="card-panel">
+
+
+
+                    <form id="book" method="get" action="book.html">
+<div >
+
+<!-- <div class="input-field">
+        <i class="mdi-maps-my-location prefix"></i>
+                         <input type="text" name="taxi_type" id="yellow"  class="validate" />
+                          <label for="icon_prefix3">Detail your current Location</label>
+        </div> -->
+
+  <div class="input-field">
+        <i class="mdi-maps-my-location prefix"></i>
+                         <input type="text" name="start" id="start" class="validate" required />
+                          <label for="icon_prefix3">Specify your exact location</label>
+        </div> 
+     <div class="input-field">
+        <i class="mdi-content-flag prefix"></i>
+                         <input type="text" name="end" id="end" class="validate" required />
+                          <label for="icon_prefix3">Destination</label>
+        
+
+
+ 
+<legend>Select Taxi type</legend> 
+
+    <p class="col s6"><input type="radio" name="taxi_type" id="del1" value="" class="with-gap" checked="true" /><label for="del1"> Yellow Taxi</label></p> 
+    <p class="col s6"><input type="radio" name="taxi_type" id="del2" value="" class="with-gap" /><label for="del2">Private Taxi</label></p> 
+    <!-- <p class="col s5"><input type="radio" name="delivery" id="del3" value="lemousine" class="with-gap" /><label for="del3">Lemousine</label></p>  -->
+
+
+       <!--  <input id="calculate-route" type="button"  value="Calculate Route" /> -->
+<div align="center" >
+         <button id="calculate-route" class="btn waves-effect waves-light " type="button" name="action" style="margin-top:10px;">Calculate Route
+                        <i class="mdi-content-send right"></i>
+                      </button>
+                      </div>
+    </div>
+    <p class="col s6">
+        <label for="distance">Distance in km: </label>
+        <input type="text" name="distance" id="distance" readonly="true" style="border:none;font-weight:bold;" />
+    </p>
+
+    <p class="col s6">
+        <label for="distance">Price GH&cent;: </label>
+        <input type="text" name="price" id="price" readonly="true"  style="border:none;font-weight:bold;"/>
+    </p>
+
+        
+        <input type=""  readonly="true" style="border:none;" />
+
+        <input type="text" name="latitude" id="lat" style="display:none"  >
+        <input type="text" name="longitude" id="lng" style="display:none">
+
+
+
+</div>
+
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                        <button  class="btn-floating btn-large blue">
+                          <i class="large mdi-maps-local-library" style="color:#000"></i>
+                        </button>
+                       
+                    </div>
+</div>
+
+</form>
+</div>
+</div>
+</div></div>
+</section>
+</div>
+<div id="map_canvas"></div>
+
+
+
+ 
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/material-preloader/materialPreloader-2.html"></script>   
+
+    <!-- chartist -->
+    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>   
+
+    <!-- chartjs -->
+    <script type="text/javascript" src="js/plugins/chartjs/chart.min.js"></script>
+    <script type="text/javascript" src="js/plugins/chartjs/chart-script.js"></script>
+
+    <!-- sparkline -->
+    <script type="text/javascript" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="js/plugins/sparkline/sparkline-script.js"></script>
+    
+    <!--jvectormap-->
+    <script type="text/javascript" src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="js/plugins/jvectormap/vectormap-script.js"></script>
+    
+    
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <!-- Toast Notification -->
+  <script type="text/javascript">
+    // Toast Notification
+    $(window).load(function() {
+        setTimeout(function() {
+            Materialize.toast('<span>Hiya! You are now on taxi share.</span>', 1500);
+        }, 100);
+        setTimeout(function() {
+            Materialize.toast('<span>Kindly switch on Your GPS!</span>', 1500);
+        }, 10000);
+       /* setTimeout(function() {
+            Materialize.toast('<span>You have new order.</span><a class="btn-flat yellow-text" href="#">Read<a>', 3000);
+        }, 15000);*/
+    });
+    
+    </script>
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIeZwHuk5VmA6zDWns-1lEaXB2a-ApdGc&callback=initialize">
+</script>
+
+
+
+
+<script type="text/javascript">
+    var directionDisplay;
+    var map;
+    var directionsService;
+
+    var start;
+    var price;
+    var taxi_type;
+    var taxi_type_value;
+   // var taxi_type=document.getElementById("yellow");
+
+
+    function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var defaultplace = new google.maps.LatLng(5.5500, -.196306);
+        var myOptions = {
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: defaultplace
+        };
+
+
+
+                
+
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        directionsDisplay.setMap(map);
+        directionsService = new google.maps.DirectionsService();
+    }
+
+    function calcRoute(currentLocation) {
+         start = new google.maps.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude);
+
+         $('#lat').val( '' +  currentLocation.coords.latitude+'');
+         $('#lng').val( '' +  currentLocation.coords.longitude+'');  
+           // alert("Latitude : " + latitude + " Longitude: " + longitude);
+        var end = document.getElementById("end").value;
+       
+        var distanceInput = document.getElementById("distance");
+        price =document.getElementById("price");
+          taxi_type = document.getElementsByName("taxi_type").value;
+          if (document.getElementsByName('taxi_type')[0].checked) {
+  taxi_type_value = document.getElementById('del1').value;
+}else if (document.getElementsByName('taxi_type')[1].checked) {
+  taxi_type_value = document.getElementById('del2').value;
+}
+
+        // alert(taxi_type_value);
+
+         /* alert(document.getElementsByName("username")[0].value);
+    alert(taxi_type);*/
+
+
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+
+        directionsService.route(request, function(response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                distanceInput.value = response.routes[0].legs[0].distance.value / 1000;
+                price.value=distanceInput.value*taxi_type_value;
+
+
+
+            }
+        });
+
+
+        
+
+        
+    }
+
+function findCurrentLocation() {
+        navigator.geolocation.getCurrentPosition(calcRoute);
+
+
+    }
+
+window.onload=findCurrentLocation;
+    document.getElementById('calculate-route').onclick = findCurrentLocation;
+</script>
+
+
+
+
+
+<!-- <script>
+            function init() {
+                var input = document.getElementById('end');
+                var autocomplete = new google.maps.places.Autocomplete(input);
+            }
+
+            
+ 
+            google.maps.event.addDomListener(window, 'load', init);
+        </script>-->
+</body>
+
+
+<!-- Mirrored from demo.geekslabs.com/materialize/v1.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 Jun 2015 13:55:33 GMT -->
+</html>

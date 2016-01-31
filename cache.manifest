@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# 2010-06-18:v2
+
+# Explicitly cached 'master entries'.
+CACHE:
+/favicon.ico
+locationgeo.html
+css/materialize.css
+css/style.css
+images/materialize-logo.png
+js/materialize.js
+js/materialize.min.js
+js/plugins.js
+
+# Resources that require the user to be online.
+NETWORK:
+*
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
+FALLBACK:
+/main.py /static.html
+images/large/ images/offline.jpg
