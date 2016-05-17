@@ -75,10 +75,16 @@
 }
 
 
-var lat=getQueryVariable("latitude");
-var lng= getQueryVariable("longitude") ;
-//alert(man);
-//alert(kojo)
+var price=getQueryVariable("price");
+var origin= getQueryVariable("start") ;
+var detination= getQueryVariable("end") ;
+
+
+//alert(price);
+//alert(origin);
+//alert(destination);
+
+//document.getElementById('pricer').value = 'kojo';
 
 
 
@@ -88,56 +94,7 @@ var lng= getQueryVariable("longitude") ;
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 
 
- <script type="text/javascript" language="javascript">
-
-
-    
-
-   
-   $(document).ready(function() {
-
-      //$("#driver").click(function(event){
-          $.getJSON('taxi_data.php?latitude='+lat+'&longitude='+lng, function(jd) {
-          
-
-
-
-          $.each(jd, function(index, item){
-
-            //var anchor = document.getElementById('stage1');
-    //var id = $('#stage1').attr('id');
-
-
-              
-             $('#stage1').append(  /*'<p class="posts-summary">  ' + jd[index].detail + '</p>',*/     '  <div class="col s12 m6 l4"><div id="profile-card" class="card">    <div style="height:50px;"> </div> <div class="card-content" > <img src="images/avatar.jpg" alt="" class="circle responsive-img activator card-profile-image" style="margin-top:-90px;"> <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right"> <i class="mdi-action-view-headline activator"> </i></a> <span class="card-title activator grey-text text-darken-4"> ' + jd[index].name + '</span> <p><i class="mdi-editor-format-list-numbered cyan-text text-darken-2"></i> ' + jd[index].car_number+'</p><p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> '+ jd[index].nationality+ '</p><p><i class="mdi-maps-directions-car cyan-text text-darken-2"></i> ' + jd[index].car_model+ '</p><form> <button id="calculate-route" class="btn waves-effect waves-light " type="button" name="action" style="margin-top:10px;">Book Now<i class="mdi-content-send right"></i></button></form><p></p> <div class="card-reveal" style="margin-left:-20px;"> <span class="card-title grey-text text-darken-4">' + jd[index].what + '<i class="mdi-navigation-close right"></i></span><p> ' + jd[index].detail+ '</p><p><i class="mdi-action-room cyan-text text-darken-2"></i> ' + jd[index].location+'</p><p><i class="mdi-action-today cyan-text text-darken-2"></i> '+ jd[index].date+ '</p><p><i class="mdi-action-schedule cyan-text text-darken-2"></i> ' + jd[index].time+ '</p><p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i>' + jd[index].screenname + '</p><a href=""><i class="mdi-communication-call spacer cyan-text text-darken-2"></a></i><a href=""></a><a href=""></a><form> <button id="calculate-route" class="btn waves-effect waves-light " type="button" name="action" style="margin-top:10px;">Book Now<i class="mdi-content-send right"></i></button></form></div></div></div></div>');
-
-             // $('#addresss').val( '' + jd[index].location+'');
-
-
-                //$('#address').val(' ' + jd.location+ '');
-
-                //$('#map-canvas').append(' ' + jd.location+ '');
-
-
-//<div><label for="address"> Address:</label><input type="text" id="addresss" value="" /><button id="vani" onclick="UpdateMap()" >Locate</button></div><div id="map_canvas" style="width:100%; height:200px;" ></div><button onClick="displayMap()">Show Map</button>
-
-
-
-             //$('#stage2').append('<p>date : ' + jd[index].date+ '</p>');
-             //$('#stage3').append('<p> Detail: ' + jd[index].detail+ '</p>');
-        //$('#stage4').append('<p> Image: <img src= "'+jd[index].img+'"></p>');
-       
-          });
-
-      },function(){
-        alert("An error Ovcc");
-      });
-
-   });
-  
-   
-  
-   </script>
+ 
 
 
    <!-- <script type="text/javascript" language="javascript">
@@ -286,13 +243,81 @@ var lng= getQueryVariable("longitude") ;
                         <div class="row">
 
                 
-<p style="height:20px;text-align:center">Available Taxi's for you to choose from</p>
+<p style="height:20px;text-align:center">Make Payment</p>
+
+<input type="text" name="" value="" id="pricer">
+
+
+<!-- <form action="https://app.mpowerpayments.com/click2pay-redirect/5597253f542ec0fc8c662450" method="post" target="_blank"> 
+ -->
+              
+  <div class="col s12 m8 l9">
+<div id="" class="card-panel"> 
+
+ <div class="input-field">
+       <!--  <i class="mdi-content-flag prefix"></i> -->
+                         <input  type="text" id="total" name="price"  value="O.50GHs" style="font-size:25px;margin-left:auto;margin-right:auto;"/>
+
+                          <label for="icon_prefix3">Price</label> 
+                          </div>
+
+<div class="input-field">
 
 
 
-<div id="stage1">
-  
+        <i class="mdi-maps-my-location prefix"></i>
+                         <input type="text" name="start"  id="start"  placeholder=""   />
+                           <label for="icon_prefix3">Origin</label> 
+        </div> 
+
+ <div class="input-field">
+        <i class="mdi-content-flag prefix"></i>
+                         <input type="text" name="end" id="end" class="" placeholder=""  />
+                          <label for="icon_prefix3">Destination</label> 
+                          </div>
+
+                          <div class="input-field">
+     <!--    <i class="mdi-content-flag prefix"></i> -->
+                         <input type="text" name="end" id="end" class="" placeholder=""  />
+                          <label for="icon_prefix3">First Name</label> 
+                          </div>
+
+                          <div class="input-field">
+        <!-- <i class="mdi-content-flag prefix"></i> -->
+                         <input type="text" name="end" id="end" class="" placeholder="" />
+                          <label for="icon_prefix3">Last Name</label> 
+                          </div>
+
+                          <div class="input-field">
+ <!--        <i class="mdi-content-flag prefix"></i> -->
+                         <input type="text" name="end" id="end" class="" placeholder=""  />
+                          <label for="icon_prefix3">Email</label> 
+                          </div>
+
+                          <div class="input-field">
+<!--         <i class="mdi-content-flag prefix"></i> -->
+                         <input type="text" name="end" id="end" class="" placeholder=""  />
+                          <label for="icon_prefix3">Mobile</label> 
+                          </div>
+
+<div align="center">
+  <a href="https://app.mpowerpayments.com/click2pay-redirect/5597253f542ec0fc8c662450" target="_blank" class="btn waves-effect waves-light " type="submit" name="action" style="margin-top:10px;" >Make Payment
+                        <i class="mdi-content-send right"></i>
+                      </a>
+
+                      </div>
+
+                   
+
+<!-- <input type="button" value="GO" onClick="calcRoute();"> -->
 </div>
+
+</div>
+
+<!-- </form> -->
+
+
+
 
                          <!--  <div class="col s12 m8 l9" style="width:">
                 <a class="waves-effect waves-light card-panel  modal-trigger" href="#modal5" style="width:100%"> <img src=""><div align="center" style="position:relative;top;-120px">Nathaniel Mensah<br>As 4056 12</div></a>

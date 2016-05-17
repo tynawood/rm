@@ -177,7 +177,7 @@ var price;
 
       price=total*2
      // document.getElementById("total").innerHTML = total + " km";
-       document.getElementById("total").value =  price ;
+       document.getElementById("total").value = " Fare :GHS "  + price ;
       }
 
    
@@ -271,8 +271,8 @@ window.onload=findCurrentLocation;
 
 <!-- <div id="total" align="center" style="font-size:25px;"></div> -->
 
-<form action="book.html" method="get">
-<input type="text" id="total" name="price"  value="" style="font-size:25px;margin-left:45%;margin-right:auto;border:none"/>
+<form action="" method="post">
+<input type="text" id="total" name="price"  value="" style="font-size:25px;margin-left:auto;margin-right:auto;"/>
 
               
   <div class="col s12 m8 l9">
@@ -302,18 +302,6 @@ window.onload=findCurrentLocation;
 
 </div>
 
-
-
-<!-- <div id="total" align="center"  value="" style="font-size:25px;"></div> -->
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                        <button  class="btn-floating btn-large blue">
-                          <i class="large mdi-maps-local-library" style="color:#000"></i>
-                        </button>
-                       
-                    </div>
-
-                   
-
 </form>
 <table border="none" style="height:100%; width:100%;margin-top:-40px;">
   <tr>
@@ -326,7 +314,17 @@ window.onload=findCurrentLocation;
 <div id="directions-panel" class="card-panel" style="width:100%;height: 100%; margin-top:-190px;"></div>
 
 </div>
+<form>
 
+<div id="total" align="center"  value="" style="font-size:25px;"></div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                        <button  class="btn-floating btn-large blue">
+                          <i class="large mdi-maps-local-library" style="color:#000"></i>
+                        </button>
+                       
+                    </div>
+
+                    </form>
 </body>
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
@@ -346,7 +344,7 @@ window.onload=findCurrentLocation;
     
 <!--  <script type="text/javascript" src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
 
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
 
 
 $('form').submit( function() {
@@ -401,7 +399,7 @@ $('form').submit( function() {
     
     */
 
-        </script>->
+        </script>
     
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
